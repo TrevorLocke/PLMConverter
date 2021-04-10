@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: #FFF;
+  height: 100vh
+}
+
+.main {
+  width: 20%;
+  margin: 0 auto;
+  justify-content: center;
+  align-content: center;
+  top: 50%
+}
+
+h2 {
+  font-size: 3rem;
+  color: #0A49B8
+}
+
+p {
+  color: #0A49B8;
+  font-size: 1.2rem;
+}
+
+#numb {
+  padding:5px;
+  border-radius:10px;
+}
+
+.form-button {
+  background:  #0A49B8;
+
+color: #fff;
+
+border: 1px solid #eee;
+
+border-radius: 20px;
+
+ padding:5px;
+text-shadow:none;
+  
+}
+
+.form-button:hover {
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+
+  <div class="main">
+<h2>PLM Converter</h2>
+
+<p>Please input a material number:</p>
+
+<input id="numb" placeholder="0000000000">
+
+<button class="form-button" type="button" onclick="myFunction()">Search</button>
+
+<p id="demo"></p>
+    <div>
+
+<script>
+function myFunction() {
+  var x, firstPart, lastPart;
+
+ firstPart =`https://genmills.sharepoint.com/sites/gPLMSPecificationReport/SitePages/ING-Reports.aspx#Default=%7B%22k%22%3A%2200000000`;
+  x = document.getElementById("numb").value;
+  lastPart = `%22%2C%22r%22%3A%5B%7B%22n%22%3A%22RefinableString05%22%2C%22t%22%3A%5B%22%5C%22%C7%82%C7%825031333430%5C%22%22%5D%2C%22o%22%3A%22OR%22%2C%22k%22%3Afalse%2C%22m%22%3A%7B%22%5C%22%C7%82%C7%825031333430%5C%22%22%3A%22P1340%22%7D%7D%5D%2C%22l%22%3A1033%7D`;
+  
+url = firstPart + x + lastPart;
+  window.open(url, '_blank'); 
+	
+}
+</script>
+
+</body>
+</html> 
